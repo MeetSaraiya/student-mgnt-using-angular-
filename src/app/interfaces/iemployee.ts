@@ -3,5 +3,6 @@ export interface IEmployee {
     name: string,
     age: number,
     phone: string,
-    salary: number
+    salary: number,
+    password?:string
 }

@@ -1,5 +1,5 @@
-<div>
-    <button [routerLink]="['/add-employee']" routerLinkActive="router-link-active" >Add Employee</button>
+<div class="ml-5">
+    <button [routerLink]="['/add-employee']" class="m-2 bg-green-500 text-white rounded-md p-3" routerLinkActive="router-link-active" >Add Employee</button>
     <table mat-table [dataSource]="employeeList" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
@@ -33,6 +33,14 @@
             <th mat-header-cell *matHeaderCellDef> phone </th>
             <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
           
+        </ng-container>
+
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element"> 
+          <button mat-fab extended type="button" color="warn" class="m-2 bg-yellow-400 text-black rounded-md p-3" (click)="editEmp(element.id)">Edit</button>
+          <button mat-fab extended type="button" color="warn" class="m-2 bg-red-600 text-black rounded-md p-3" (click)="deleteEmp(element.id)">Delete</button>
+          </td>
         </ng-container>
          
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

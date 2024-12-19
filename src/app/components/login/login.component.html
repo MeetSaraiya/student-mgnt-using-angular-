@@ -1,0 +1,11 @@
+<form class="login" [formGroup]="loginForm" (ngSubmit)="save()">
+    <h2>Welcome, User!</h2>
+    <p>Please log in</p>
+    <input type="text" placeholder="User Name" formControlName="name" />
+    <input type="password" placeholder="Password" formControlName="password" />
+    <input type="submit" value="Log In" />
+    <div class="links">
+     
+      <button [routerLink]="['/']" routerLinkActive="router-link-active" >Dashboard</button>
+    </div>
+  </form>
